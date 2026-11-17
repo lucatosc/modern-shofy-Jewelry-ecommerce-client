@@ -1,6 +1,10 @@
 import Cookies from "js-cookie";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-const NEXT_PUBLIC_API_BASE_URL = 'https://shofy-backend.vercel.app';
+
+// Base URL (including the `/api` prefix) of the Zaibaraish backend.
+// Configure via NEXT_PUBLIC_API_URL in .env.local; defaults to the local backend for dev.
+const NEXT_PUBLIC_API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
 
 export const apiSlice = createApi({
   reducerPath: "api",
